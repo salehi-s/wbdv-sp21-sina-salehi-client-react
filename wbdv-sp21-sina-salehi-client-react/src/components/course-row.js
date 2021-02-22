@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CourseRow = ({title, owner, lastModified, time}) =>
+const CourseRow = ({title, owner, lastModified, time, deleteCourse, course}) =>
     <tr>
         <td>{title}</td>
         <td>{owner}</td>
@@ -8,7 +8,7 @@ const CourseRow = ({title, owner, lastModified, time}) =>
         <td>{time}</td>
         <td>
             <i className = "fas fa-check"></i>
-            <i className = "fas fa-trash"></i>
+            <i onClick = {() => deleteCourse(course)} className = "fas fa-trash"></i>
             <i className = "fas fa-edit"></i>
         </td>
     </tr>
