@@ -3,7 +3,6 @@ import React from 'react'
 const CourseEditor = () =>
     <div>
         <div className="container-fluid">
-            <!-- Navigation Bar (Top of Page) Start -->
             <nav className="navbar navbar-expand navbar-dark bg-dark">
                 <a className="navbar-brand" href="../index.html">NEUcourses</a>
                 <div className="collapse navbar-collapse" id="navbarNav">
@@ -27,7 +26,6 @@ const CourseEditor = () =>
                     </ul>
                 </div>
             </nav>
-            <!-- Navigation Bar (Top of Page) End -->
         </div>
 
         <div className="container-fluid">
@@ -149,3 +147,5 @@ const CourseEditor = () =>
             </div>
         </div>
     </div>
+
+export default CourseEditor
