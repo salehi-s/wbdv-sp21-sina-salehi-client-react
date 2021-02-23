@@ -17,10 +17,19 @@ export default class CourseTable
                 </Link>
                 <h2>Course Table</h2>
                 <table className = "table">
+                    <thead>
+                    <tr className="table-primary">
+                        <th>Title</th>
+                        <th>Owned By</th>
+                        <th>Date Last Modified</th>
+                        <th>Time Last Modified</th>
+                    </tr>
+                    </thead>
                     <tbody>
                         {
                             this.props.courses.map((course, index) =>
                                              <CourseRow
+                                                 updateCourse = {this.props.updateCourse}
                                                  deleteCourse = {this.props.deleteCourse}
                                                  key = {index}
                                                  course = {course}

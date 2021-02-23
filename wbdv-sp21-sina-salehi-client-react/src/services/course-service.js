@@ -18,6 +18,16 @@ export const findAllCourses = () =>
     fetch(COURSES_URL)
         .then(response => response.json())
 
+export const updateCourse = (id, course) =>
+    fetch(`${COURSES_URL}/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(course),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+        .then(response => response.json())
+
 export const deleteCourse = (id) =>
     fetch(`${COURSES_URL}/${id}`, {
         method: 'DELETE'
@@ -28,7 +38,7 @@ export default {
     createCourse,
     findAllCourses,
     // findCourseById,
-    // updateCourse,
+    updateCourse,
     deleteCourse
 }
 
