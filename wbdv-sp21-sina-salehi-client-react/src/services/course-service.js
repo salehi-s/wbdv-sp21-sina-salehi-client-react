@@ -1,7 +1,3 @@
-/*
-Function CourseService() is used to initialize a new course service variable
-*/
-
 const COURSES_URL = 'https://wbdv-generic-server.herokuapp.com/api/salehi.s/courses'
 
 export const createCourse = (course) =>
