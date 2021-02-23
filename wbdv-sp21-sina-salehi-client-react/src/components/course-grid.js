@@ -7,7 +7,7 @@ const CourseGrid = ({courses}) =>
         <Link to = "/courses/table">
             <i className = "fas fa-2x fa-list float-right"></i>
         </Link>
-        <h2>Course Grid {courses.length}</h2>
+        <h2>Course Grid</h2>
         <div className = "row">
         {
             courses.map(course =>

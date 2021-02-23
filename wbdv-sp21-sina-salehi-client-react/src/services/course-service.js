@@ -2,13 +2,44 @@
 Function CourseService() is used to initialize a new course service variable
 */
 
+const COURSES_URL = 'https://wbdv-generic-server.herokuapp.com/api/salehi.s/courses'
+
+export const createCourse = (course) =>
+    fetch(COURSES_URL, {
+        method: 'POST',
+        body: JSON.stringify(course),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+        .then(response => response.json())
+
+export const findAllCourses = () =>
+    fetch(COURSES_URL)
+        .then(response => response.json())
+
+export const deleteCourse = (id) =>
+    fetch(`${COURSES_URL}/${id}`, {
+        method: 'DELETE'
+    })
+        .then(response => response.json())
+
+export default {
+    createCourse,
+    findAllCourses,
+    // findCourseById,
+    // updateCourse,
+    deleteCourse
+}
+
+/*
 function CourseService() {
     this.createCourse = createCourse
     this.findAllCourses = findAllCourses
     this.findCourseById = findCourseById
     this.updateCourse = updateCourse
     this.deleteCourse = deleteCourse
-    this.url = 'https://wbdv-generic-server.herokuapp.com/api/salehi.s/courses' // Server URL
+    this.url = COURSES_URL // Server URL
     var self = this
 
     // Send a new course to the server
@@ -58,4 +89,4 @@ function CourseService() {
     function deleteCourse(id) {
         return fetch(`${self.url}/${id}`, {method: 'DELETE'})
     }
-}
+}*/

@@ -1,6 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-const CourseEditor = () =>
+const CourseEditor = ({props}) =>
     <div>
         <div className="container-fluid">
             <nav className="navbar navbar-expand navbar-dark bg-dark">
@@ -30,7 +31,14 @@ const CourseEditor = () =>
 
         <div className="container-fluid">
             <div>
-                <h1>Course Editor</h1>
+                <h1>
+                    <Link to = "">
+                        <i className = "fas fa-arrow-left"></i>
+                    </Link>
+                    Course Editor
+                    <i onClick = {() => props.history.goBack()}
+                       className = "fas fa-times float-right"></i>
+                </h1>
             </div>
         </div>
 
