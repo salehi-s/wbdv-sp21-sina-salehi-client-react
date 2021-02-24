@@ -97,29 +97,36 @@ class CourseManager extends React.Component {
                     <nav className="navbar navbar-expand navbar-dark bg-dark">
                         <div className = "collapse navbar-collapse" id = "navbarNav">
                             <ul className = "navbar-nav">
-                                <li className = "nav-item col">
-                                    <h1>Course Manager</h1>
-                                </li>
-                                <li className = "nav-item col-10">
-                                    <input id = "add-course-field"
-                                           value = {this.state.newCourseTitle}
-                                           onChange = {(e) => this.setState({
-                                               newCourseTitle: e.target.value
-                                           })}
-                                           className = "form-control wbdv-field-add-course"
-                                           title = "Enter the name of a new course here"
-                                           placeholder = "New Course Name"></input>
-                                </li>
-                                <li className = "nav-item col">
-                                    <i onClick = {this.addCourse}
-                                       className = "fas fa-3x fa-plus-circle float-right"></i>
-                                </li>
+                                <span>
+                                    <li className = "nav-item col">
+                                        <h1>Course Manager</h1>
+                                    </li>
+                                </span>
+                                <span>
+                                    <li className = "nav-item">
+                                        <input id = "add-course-field"
+                                               value = {this.state.newCourseTitle}
+                                               onChange = {(e) => this.setState({
+                                                   newCourseTitle: e.target.value
+                                               })}
+                                               className = "form-control wbdv-field-add-course"
+                                               title = "Enter the name of a new course here"
+                                               placeholder = "New Course Name"></input>
+                                    </li>
+                                </span>
+                                <span>
+                                    <li className = "nav-item col">
+                                        <i onClick = {this.addCourse}
+                                           className = "fas fa-3x fa-plus-circle float-right"></i>
+                                    </li>
+                                </span>
                             </ul>
                         </div>
                     </nav>
                 </div>
                 <div className = "container-fluid">
-                    <Route path = {["/courses/table", ""]}>
+                    <Route path = {["/courses/table", "/courses", ""]}
+                           exact = {true}>
                         <CourseTable deleteCourse = {this.deleteCourse}
                                      updateCourse = {this.updateCourse}
                                      courses = {this.state.courses}/>

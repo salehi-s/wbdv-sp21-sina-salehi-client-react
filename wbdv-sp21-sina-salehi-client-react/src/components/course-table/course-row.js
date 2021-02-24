@@ -39,9 +39,9 @@ const CourseRow = (
                                className = "form-control"/>
                     }
                 </td>
-                <td>{owner}</td>
-                <td>{lastModified}</td>
-                <td>{time}</td>
+                <td className = "d-none d-md-table-cell">{owner}</td>
+                <td className = "d-none d-lg-table-cell">{lastModified}</td>
+                <td className = "d-none d-lg-table-cell">{time}</td>
                 <td>
                     <i onClick = {() => deleteCourse(course)}
                        className = "fas fa-trash"></i>

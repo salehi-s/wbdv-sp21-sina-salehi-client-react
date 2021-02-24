@@ -20,9 +20,9 @@ export default class CourseTable
                     <thead>
                     <tr className="table-primary">
                         <th>Title</th>
-                        <th>Owned By</th>
-                        <th>Date Last Modified</th>
-                        <th>Time Last Modified</th>
+                        <th className = "d-none d-md-table-cell">Owned By</th>
+                        <th className = "d-none d-lg-table-cell">Date Last Modified</th>
+                        <th className = "d-none d-lg-table-cell">Time Last Modified</th>
                     </tr>
                     </thead>
                     <tbody>
