@@ -136,6 +136,12 @@ class CourseManager extends React.Component {
                            render = {(props) => <CourseEditor props = {props}/>}>
                     </Route>
                 </div>
+                <div className = "container-fluid">
+                    <div className = "fixed-bottom">
+                        <i onClick = {this.addCourse}
+                           className = "fas fa-3x fa-plus-circle float-right wbdv-button-add-course"></i>
+                    </div>
+                </div>
             </div>
         )
     }

@@ -13,7 +13,7 @@ code {
 }
 
 .fa-plus-circle {
-  color: #af0000
+  color: #af0000;
 }
 
 .wbdv-field-add-course {
@@ -25,4 +25,9 @@ code {
 
 h1 {
   color: white;
+}
+
+.wbdv-button-add-course {
+  margin: 5px;
+  padding: 5px;
 }
