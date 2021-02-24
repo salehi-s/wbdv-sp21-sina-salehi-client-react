@@ -29,20 +29,14 @@ class CourseManager extends React.Component {
         findAllCourses()
             .then(courses => this.setState({courses}))
 
-    addCourse = () => {
-        const newCourse = {
-            title: "New Course",
-            owner: "New Owner",
-            lastModified: "Never",
-            time: "Now"
-        }
-        courseService.createCourse(newCourse)
-            .then(course => this.setState(
+    addCourse = (course) => {
+        courseService.createCourse(course)
+            .then(c => this.setState(
                 (prevState) => ({
                     ...prevState,
                     courses: [
                         ...prevState.courses,
-                        course
+                        c
                     ]
                 })
             ))
@@ -62,20 +56,42 @@ class CourseManager extends React.Component {
     render() {
         return(
             <div>
-                <h1>Course Manager</h1>
-                <button onClick = {this.addCourse}>Add Course</button>
-                <Route path = "/courses/table">
-                    <CourseTable deleteCourse = {this.deleteCourse}
-                                 updateCourse = {this.updateCourse}
-                                 courses = {this.state.courses}/>
-                </Route>
-                <Route path = "/courses/grid">
-                    <CourseGrid deleteCourse = {this.deleteCourse}
-                                courses = {this.state.courses}/>
-                </Route>
-                <Route path = "/courses/editor"
-                       render = {(props) => <CourseEditor props = {props}/>}>
-                </Route>
+                <div className = "container-fluid">
+                    <nav className="navbar navbar-expand navbar-dark bg-dark">
+                        <div className = "collapse navbar-collapse" id = "navbarNav">
+                            <ul className = "navbar-nav">
+                                <li className = "nav-item">
+                                    <h1>Course Manager</h1>
+                                </li>
+                                <li className = "nav-item">
+                                    <input className = "form-control wbdv-field-add-course"></input>
+                                </li>
+                                <li className = "nav-item">
+                                    <i onClick = {this.addCourse}
+                                       className = "fas fa-3x fa-plus-circle float-right"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div className = "container-fluid">
+                    <Route path = {["/courses/table", ""]}>
+                        <CourseTable deleteCourse = {this.deleteCourse}
+                                     updateCourse = {this.updateCourse}
+                                     courses = {this.state.courses}/>
+                    </Route>
+                </div>
+                <div className = "container-fluid">
+                    <Route path = "/courses/grid">
+                        <CourseGrid deleteCourse = {this.deleteCourse}
+                                    courses = {this.state.courses}/>
+                    </Route>
+                </div>
+                <div className = "container-fluid">
+                    <Route path = "/courses/editor"
+                           render = {(props) => <CourseEditor props = {props}/>}>
+                    </Route>
+                </div>
             </div>
         )
     }

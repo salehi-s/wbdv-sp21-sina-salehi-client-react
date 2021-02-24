@@ -33,7 +33,8 @@ const CourseEditor = ({props}) =>
             <div>
                 <h1>
                     <Link to = "">
-                        <i className = "fas fa-arrow-left"></i>
+                        <i onClick = {() => props.history.goBack()}
+                           className = "fas fa-arrow-left"></i>
                     </Link>
                     Course Editor
                     <i onClick = {() => props.history.goBack()}
