@@ -6,7 +6,7 @@ const CourseCard = ({course}) =>
         <div className = "card">
             <div className = "card-body">
                 <h5 className = "card-title">{course.title}</h5>
-                <img src = "Book.svg" className = "card-img-top" alt = "..."/>
+                <img src = "https://upload.wikimedia.org/wikipedia/commons/3/39/Book.svg" className = "card-img-top" alt = "Card Image"></img>
                 <p className = "card-text">Owned By: {course.owner}</p>
                 <p className = "card-text">Date Last Modified: {course.lastModified}</p>
                 <p className = "card-text">Time Last Modified: {course.time}</p>
