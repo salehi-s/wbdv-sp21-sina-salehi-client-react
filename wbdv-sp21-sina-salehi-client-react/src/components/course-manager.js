@@ -7,7 +7,8 @@ import courseService, {findAllCourses, deleteCourse} from "../services/course-se
 
 class CourseManager extends React.Component {
     state = {
-        courses: []
+        courses: [],
+        newCourseTitle:"New Course Title"
     }
 
     updateCourse = (course) => {
@@ -29,14 +30,50 @@ class CourseManager extends React.Component {
         findAllCourses()
             .then(courses => this.setState({courses}))
 
-    addCourse = (course) => {
-        courseService.createCourse(course)
-            .then(c => this.setState(
+    addCourse = () => {
+        var currentDate = new Date()
+
+        if ((currentDate.getMonth() + 1) < 10) {
+            var mdy = "0" + (currentDate.getMonth() + 1)
+        }
+        else {
+            var mdy = (currentDate.getMonth() + 1)
+        }
+        if (currentDate.getDate() < 10) {
+            mdy += "/0" + currentDate.getDate() +
+                   "/" + currentDate.getFullYear()
+        }
+        else {
+            mdy += "/" + currentDate.getDate() +
+                   "/" + currentDate.getFullYear()
+        }
+
+        if (currentDate.getHours() < 10) {
+            var time = "0" + currentDate.getHours()
+        }
+        else {
+            var time = currentDate.getHours()
+        }
+        if (currentDate.getMinutes() < 10) {
+            time += ":0" + currentDate.getMinutes()
+        }
+        else {
+            time += ":" + currentDate.getMinutes()
+        }
+
+        const newCourse = {
+            title: this.state.newCourseTitle,
+            owner: "Me",
+            lastModified: mdy,
+            time: time
+        }
+        courseService.createCourse(newCourse)
+            .then(course => this.setState(
                 (prevState) => ({
                     ...prevState,
                     courses: [
                         ...prevState.courses,
-                        c
+                        course
                     ]
                 })
             ))
@@ -60,13 +97,20 @@ class CourseManager extends React.Component {
                     <nav className="navbar navbar-expand navbar-dark bg-dark">
                         <div className = "collapse navbar-collapse" id = "navbarNav">
                             <ul className = "navbar-nav">
-                                <li className = "nav-item">
+                                <li className = "nav-item col">
                                     <h1>Course Manager</h1>
                                 </li>
-                                <li className = "nav-item">
-                                    <input className = "form-control wbdv-field-add-course"></input>
+                                <li className = "nav-item col-10">
+                                    <input id = "add-course-field"
+                                           value = {this.state.newCourseTitle}
+                                           onChange = {(e) => this.setState({
+                                               newCourseTitle: e.target.value
+                                           })}
+                                           className = "form-control wbdv-field-add-course"
+                                           title = "Enter the name of a new course here"
+                                           placeholder = "New Course Name"></input>
                                 </li>
-                                <li className = "nav-item">
+                                <li className = "nav-item col">
                                     <i onClick = {this.addCourse}
                                        className = "fas fa-3x fa-plus-circle float-right"></i>
                                 </li>
