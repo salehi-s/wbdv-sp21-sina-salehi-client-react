@@ -37,7 +37,8 @@ export default class CourseTable
                                                  owner = {course.owner}
                                                  lastModified = {course.lastModified}
                                                  time = {course.time}
-                                             />)
+                                             />
+                            )
                         }
                     </tbody>
                 </table>
