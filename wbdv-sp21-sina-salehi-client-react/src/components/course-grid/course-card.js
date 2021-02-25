@@ -45,15 +45,21 @@ const CourseCard = (
                 <p className="card-text">Owned By: {course.owner}</p>
                 <p className="card-text">Date Last Modified: {course.lastModified}</p>
                 <p className="card-text">Time Last Modified: {course.time}</p>
-                <Link to="/courses/editor" className="btn btn-primary">
-                    Go to {course.title}
-                </Link>
-                <i onClick = {() => deleteCourse(course)}
-                   className = "fas fa-trash"></i>
-                {!editing && <i onClick = {() => setEditing(true)}
-                                className = "fas fa-edit"></i>}
-                {editing && <i onClick={() => saveTitle(course)}
-                               className="fas fa-check"></i>}
+                <div className = "container-fluid">
+                    <Link to="/courses/editor" className="btn btn-primary">
+                        Go to {course.title}
+                    </Link>
+                </div>
+                <span className = "wbdv-buttons-course-card">
+                    <i onClick = {() => deleteCourse(course)}
+                       className = "fas fa-trash"></i>
+                </span>
+                <span className = "wbdv-buttons-course-card">
+                    {!editing && <i onClick = {() => setEditing(true)}
+                                    className = "fas fa-edit fa-lg float-right"></i>}
+                    {editing && <i onClick={() => saveTitle(course)}
+                                   className="fas fa-check fa-lg float-right"></i>}
+                </span>
             </div>
         </div>
     </div>

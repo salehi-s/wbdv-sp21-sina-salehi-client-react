@@ -23,11 +23,30 @@ code {
   padding: 10px;
 }
 
-h1 {
+.wbdv-button-add-course-top {
+  margin-left: 5px;
+  padding-left: 5px;
+}
+
+.wbdv-button-add-course-bottom {
+  margin: 5px;
+  padding: 5px;
+}
+
+.wbdv-header-course-manager {
   color: white;
 }
 
-.wbdv-button-add-course {
-  margin: 5px;
-  padding: 5px;
+span {
+  width: 100%;
+}
+
+.wbdv-buttons-course-row {
+  margin: 2px;
+  padding: 2px;
+}
+
+.wbdv-buttons-course-card {
+  margin: 2px;
+  padding: 2px;
 }

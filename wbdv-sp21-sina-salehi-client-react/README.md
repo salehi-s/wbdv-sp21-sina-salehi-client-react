@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+Sina Salehi</br>
+CS5610 - Web Development</br>
+Professor Annunziato</br>
+Assignment 1 (Static Base) and 2 (User Administration)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1>Core Application Files</h1>
 
-## Available Scripts
+1. Components
+    1. Course Editor
+        1. course-editor.js
+    1. Course Grid
+        1. course-grid.js
+        1. course-card.js
+    1. Course Table
+        1. course-table.js
+        1. course-row.js
+    1. course-manager.js
+1. Services
+    1. course-service.js
+1. App.js
+1. App.css
+1. index.js
+1. index.css
 
-In the project directory, you can run:
+<h1>Application Map</h1>
 
-### `npm start`
+<h3>Home (Course Manager)</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The home page presents all courses stored on the server as a table by default.
+Enter the name of a new course to be added to the Course Table and Course Grid
+in the input field at the top of the page and click the red plus button to the
+right of this input field to add a new course to the Course Table and Course
+Grid with the text entered in the input field as the title of the course, the user
+as the owner of the course, and the current date and time as the date last modified
+and time last modified respectively.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h3>Course Grid</h3>
 
-### `npm test`
+The Course Grid displays all of the courses stored on the server as a grid of
+cards.  Each card details the title of the course, the owner of the course, and the
+date and time at which the course was last modified.  Click the button labeled "Go
+to X", in which "X" is the title of the course, to navigate to the Course Editor.
+Click the trash can icon to delete the course corresponding to that card from the
+server.  Click the pencil/paper icon to edit the title of the course corresponding
+to that card.  Clicking this icon transforms the course title at the top of the card
+to an input field.  Enter the new title of the course in this input field and click
+the check mark icon that replaced the pencil/paper icon to modify the title of the
+course to the text entered in the input field.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h3>Course Table</h3>
 
-### `npm run build`
+The Course Table displays all of the courses stored on the server as a table.
+Each row details the title of the course, the owner of the course, and the
+date and time at which the course was last modified.  Click the title of a course
+to navigate to the Course Editor.  Click the trash can icon to delete the course
+from the server.  Click the pencil/paper icon to edit the title of the course.
+Clicking this icon transforms the course title at the front of the row
+to an input field.  Enter the new title of the course in this input field and click
+the check mark icon that replaced the pencil/paper icon to modify the title of the
+course to the text entered in the input field.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h3>Course Editor</h3>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The Course Editor displays all of the same information that was in the Course Editor
+of the previous assignment.  The contents of the Course Editor are static/non-functional,
+and clicking on any of the elements on the page except for the arrow in the upper-left corner
+of the page or the X in the upper-right corner of the page will do nothing.  Clicking on either
+the arrow in the upper-left corner of the page or the X in the upper-right corner of the page
+will return you to the previous page (either the Course Table or Course Grid depending on
+how you reached the Course Editor).

@@ -43,12 +43,16 @@ const CourseRow = (
                 <td className = "d-none d-lg-table-cell">{lastModified}</td>
                 <td className = "d-none d-lg-table-cell">{time}</td>
                 <td>
-                    <i onClick = {() => deleteCourse(course)}
-                       className = "fas fa-trash"></i>
-                    {!editing && <i onClick = {() => setEditing(true)}
-                        className = "fas fa-edit"></i>}
-                    {editing && <i onClick={() => saveTitle()}
-                        className="fas fa-check"></i>}
+                    <span className = "wbdv-buttons-course-row">
+                        <i onClick = {() => deleteCourse(course)}
+                           className = "fas fa-lg fa-trash"></i>
+                    </span>
+                    <span className = "wbdv-buttons-course-row">
+                        {!editing && <i onClick = {() => setEditing(true)}
+                            className = "fas fa-lg fa-edit"></i>}
+                        {editing && <i onClick={() => saveTitle()}
+                            className="fas fa-lg fa-check"></i>}
+                    </span>
                 </td>
             </tr>)
 }

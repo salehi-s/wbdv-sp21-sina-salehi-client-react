@@ -8,7 +8,7 @@ import courseService, {findAllCourses, deleteCourse} from "../services/course-se
 class CourseManager extends React.Component {
     state = {
         courses: [],
-        newCourseTitle:"New Course Title"
+        newCourseTitle: ""
     }
 
     updateCourse = (course) => {
@@ -67,6 +67,7 @@ class CourseManager extends React.Component {
             lastModified: mdy,
             time: time
         }
+
         courseService.createCourse(newCourse)
             .then(course => this.setState(
                 (prevState) => ({
@@ -77,6 +78,13 @@ class CourseManager extends React.Component {
                     ]
                 })
             ))
+
+        this.setState(
+            (prevState) => ({
+                ...prevState,
+                newCourseTitle: ""
+            })
+        )
     }
 
     deleteCourse = (courseToDelete) => {
@@ -97,11 +105,11 @@ class CourseManager extends React.Component {
                     <nav className="navbar navbar-expand navbar-dark bg-dark">
                         <div className = "collapse navbar-collapse" id = "navbarNav">
                             <ul className = "navbar-nav">
-                                <span>
-                                    <li className = "nav-item col">
-                                        <h1>Course Manager</h1>
-                                    </li>
-                                </span>
+                                <li className = "nav-item">
+                                    <h1 className = "wbdv-header-course-manager">
+                                        Course Manager
+                                    </h1>
+                                </li>
                                 <span>
                                     <li className = "nav-item">
                                         <input id = "add-course-field"
@@ -114,12 +122,10 @@ class CourseManager extends React.Component {
                                                placeholder = "New Course Name"></input>
                                     </li>
                                 </span>
-                                <span>
-                                    <li className = "nav-item col">
-                                        <i onClick = {this.addCourse}
-                                           className = "fas fa-3x fa-plus-circle float-right"></i>
-                                    </li>
-                                </span>
+                                <li className = "nav-item">
+                                    <i onClick = {this.addCourse}
+                                       className = "fas fa-3x fa-plus-circle wbdv-button-add-course-top float-right"></i>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -147,7 +153,7 @@ class CourseManager extends React.Component {
                 <div className = "container-fluid">
                     <div className = "fixed-bottom">
                         <i onClick = {this.addCourse}
-                           className = "fas fa-3x fa-plus-circle float-right wbdv-button-add-course"></i>
+                           className = "fas fa-3x fa-plus-circle float-right wbdv-button-add-course-bottom"></i>
                     </div>
                 </div>
             </div>

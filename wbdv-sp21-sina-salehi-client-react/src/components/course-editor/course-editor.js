@@ -4,32 +4,6 @@ import {Link} from 'react-router-dom'
 const CourseEditor = ({props}) =>
     <div>
         <div className="container-fluid">
-            <nav className="navbar navbar-expand navbar-dark bg-dark">
-                <a className="navbar-brand" href="../index.html">NEUcourses</a>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a className="nav-link" href="../index.html">Course List (Home)</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link"
-                               href="../user-admin/user-admin.template.client.html">User
-                                Administration</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link"
-                               href="../profile/profile.template.client.html">Profile</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="../login/login.template.client.html">Log
-                                Out</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
-        <div className="container-fluid">
             <div>
                 <h1>
                     <Link to = "">
